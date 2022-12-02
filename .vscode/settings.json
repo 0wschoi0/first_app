@@ -1,4 +1,5 @@
 {
     "cmake.configureOnOpen": false,
-    "cmake.sourceDirectory": "${workspaceFolder}/linux/flutter"
+    "cmake.sourceDirectory": "${workspaceFolder}/linux/flutter",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
