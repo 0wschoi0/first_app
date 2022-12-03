@@ -1,16 +1,46 @@
-# first_app
+# 🎵 here! hear!
 
-A new Flutter project.
+<img src="https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=Dart&logoColor=white"/> <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=Flutter&logoColor=white"/> <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=Figma&logoColor=white"/>
 
-## Getting Started
+> 공유 플레이리스트
 
-This project is a starting point for a Flutter application.
+<br>
 
-A few resources to get you started if this is your first Flutter project:
+ ## 💡 Motivation of this project
+ 여기에 내용 입력
+ 
+<br>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 📑 Features of this project
+ ### ⚙ It Provides:
+* 여기에 내용 입력
+* 
+* 
+*
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<br>
+
+## 📲 How to Setup?
+
+<br>
+
+
+<br>
+
+
+## 🛠 Technology stacks
+
+- 여기에 내용 입력
+- 여기에 내용 입력
+
+<br>
+
+## 🧑‍💻 Project Members
+ 
+ <div align="center">
+
+
+### 앱개발
+ 
+ <br>
+
