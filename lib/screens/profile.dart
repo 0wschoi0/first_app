@@ -73,7 +73,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   child: Padding(
                     padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
                     child: Text(
-                      'Sign Out',
+                      '로그아웃',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,

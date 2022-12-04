@@ -6,17 +6,17 @@ import 'package:flutter_config/flutter_config.dart';
 import 'package:xml2json/xml2json.dart';
 import 'dart:convert';
 
-class SearchDetailScreen extends StatefulWidget {
-  SearchDetailScreen({Key? key, required String input})
+class CategoryDetailScreen extends StatefulWidget {
+  CategoryDetailScreen({Key? key, required String input})
       : _input = input,
         super(key: key);
   final String _input;
 
   @override
-  State<SearchDetailScreen> createState() => _MyAppState();
+  State<CategoryDetailScreen> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<SearchDetailScreen> {
+class _MyAppState extends State<CategoryDetailScreen> {
   late String input;
   LastFM lastfm = LastFMUnauthorized(FlutterConfig.get('LASTFM_API_KEY'),
       FlutterConfig.get('LASTFM_SHARED_SECRET'));

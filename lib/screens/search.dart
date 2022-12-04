@@ -124,7 +124,6 @@ class _SearchScreenState extends State<SearchScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        shadowColor: null,
         title: TextField(
             // input 값 받기
             controller: myController,
