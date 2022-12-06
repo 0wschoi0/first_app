@@ -27,7 +27,7 @@ apply plugin: 'com.google.gms.google-services'
 // END: FlutterFire Configuration
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
-apply from: project(':flutter_config').projectDir.getPath() + "/dotnev.gradle"
+apply from: project(':flutter_config').projectDir.getPath() + "/dotenv.gradle" //dotnev => dotenv
 
 android {
     compileSdkVersion flutter.compileSdkVersion
@@ -51,10 +51,11 @@ android {
         applicationId "com.example.first_app"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
-        minSdkVersion flutter.minSdkVersion
+        minSdkVersion 19///flutter.minSdkVersion => minSdkVersion 19 //uses-sdk:minSdkVersion 1 cannot be smaller than version 16 declared... error fix
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true //The number of method references in a .dex file cannot exceed 64K. error fix
     }
 
     buildTypes {
@@ -72,4 +73,5 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
 }
