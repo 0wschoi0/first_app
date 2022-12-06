@@ -20,4 +20,15 @@ class CacheData {
     }
     return snapshot;
   }
+
+  static DocumentReference fetchCacheDoc() {
+    User? user = FirebaseAuth.instance.currentUser;
+    String userEmail = "";
+    if (user != null) {
+      userEmail = user.email!;
+    }
+    final DocumentReference<Map<String, dynamic>> query =
+        FirebaseFirestore.instance.collection(userEmail).doc();
+    return query;
+  }
 }
