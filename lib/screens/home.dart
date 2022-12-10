@@ -29,7 +29,7 @@ class _MyAppState extends State<HomeScreen> {
     PlaylistScreen(),
     SearchScreen(),
     NotificationScreen(),
-    ProfileScreen(),
+    ProfileScreen(user: _user),
   ];
 
   @override
@@ -100,7 +100,7 @@ InkWell FirstElement(int rgb, String title, String song1, String artist1,
     String song2, String artist2, String image1, String image2, String length) {
   return InkWell(
       onTap: () {
-        print("touched");
+        print("First : Recommended Music per Cat touched");
       },
       child: Container(
           decoration: BoxDecoration(
@@ -281,13 +281,12 @@ class _MyMainState extends State<MyMain> {
           top: topP,
           child: InkWell(
             onTap: (() {
+              print("catDetail $genre touched");
               Navigator.push(
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      CategoryDetailScreen(
-                    input: genre,
-                  ),
+                      CategoryDetailScreen(input: cate, color: color),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     var begin = Offset(0.0, 1.0);
@@ -341,10 +340,11 @@ class _MyMainState extends State<MyMain> {
     }
 
     // 홈화면 마지막 요소 슬라이드
+    //This is recommended Artist
     InkWell LastElement() {
       return InkWell(
         onTap: () {
-          print("touched");
+          print("Recommended Artist");
         },
         child: Column(children: [
           Container(
