@@ -173,11 +173,13 @@ class _SearchScreenState extends State<SearchScreen> {
                 child: Container(
                     padding: EdgeInsets.only(top: 10),
                     color: Colors.white,
-                    child: Text(
-                      "음악, 플레이리스트를 검색해보세요",
-                      style: TextStyle(color: Colors.black87),
-                      textAlign: TextAlign.center,
-                    )),
+                    child: Padding(
+                        padding: EdgeInsets.only(top: 40),
+                        child: Text(
+                          "음악, 플레이리스트를\n검색해보세요",
+                          style: TextStyle(color: Colors.black54),
+                          textAlign: TextAlign.center,
+                        ))),
               ))
           : searchedItems(),
       backgroundColor: Colors.white,
