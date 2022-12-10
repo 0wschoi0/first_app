@@ -17,15 +17,9 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   FirebaseAuth user = FirebaseAuth.instance;
   bool _isSigningOut = false;
-  late User _currentUser;
-
-  void initState() {
-    _currentUser = widget._user;
-    super.initState();
-  }
+  late User _currentUser = widget._user;
 
   Route _routeToSignInScreen() {
-    initState();
     return PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) => SignInScreen(),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
@@ -59,28 +53,53 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             Text(
               " Profile",
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 24,
+                fontFamily: "Pretendard",
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ],
         ),
         centerTitle: false,
-        backgroundColor: Color.fromARGB(255, 89, 47, 120),
+        backgroundColor: Colors.white,
       ),
       //UserProfileImage
-      Image.network(
-        _currentUser.photoURL!,
-        width: 120,
+      Padding(
+        padding: EdgeInsets.only(top: 25),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(50),
+          child: Image.network(_currentUser.photoURL!,
+              width: 100, height: 100, fit: BoxFit.cover),
+        ),
       ),
       //UserName
-      Text(
-        _currentUser.displayName!,
-        style: TextStyle(
-          fontSize: 26,
-          color: Colors.black,
+      Padding(
+        padding: EdgeInsets.only(top: 12),
+        child: Text(
+          _currentUser.displayName!,
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 24,
+            fontFamily: "Pretendard",
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ),
       //Email
-      Text(_currentUser.email!),
+      Padding(
+        padding: EdgeInsets.only(top: 2, bottom: 8),
+        child: Text(
+          _currentUser.email!,
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+            fontFamily: "Pretendard",
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+      ),
       //Logout Button
       _isSigningOut
           ? CircularProgressIndicator(
@@ -112,10 +131,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: Text(
                   '로그아웃',
                   style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
                     color: Colors.white,
-                    letterSpacing: 2,
+                    fontSize: 20,
+                    fontFamily: "Pretendard",
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
