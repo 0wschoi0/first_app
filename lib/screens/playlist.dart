@@ -140,14 +140,14 @@ class _PlaylistScreenState extends State<PlaylistScreen>
           children: [
             Container(
               alignment: Alignment.centerLeft,
-              height: 118,
+              height: 90,
               padding: const EdgeInsets.only(left: 30),
               child: Text("플레이리스트",
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 30,
                     fontFamily: "Pretendard",
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                   )),
             ),
             Container(
@@ -227,7 +227,7 @@ class _PlaylistScreenState extends State<PlaylistScreen>
                 builder: (BuildContext context) {
                   return AlertDialog(
                     scrollable: true,
-                    title: Text('Login'),
+                    title: Text('New Playlist'),
                     content: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Form(
