@@ -26,7 +26,7 @@ class _MyAppState extends State<HomeScreen> {
   //BottomNavigationBar 버튼 메뉴에 따른 dart 페이지 List
   late List<Widget> _widgetOptions = <Widget>[
     MyMain(pageIndex: _pageIndex),
-    PlaylistScreen(),
+    PlaylistScreen(user: _user,),
     SearchScreen(),
     NotificationScreen(),
     ProfileScreen(user: _user),
