@@ -71,7 +71,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                         "공유된 플레이리스트": {
                           "공유된 플레이리스트": {
                             "사용자": [
-                              "$userEmail",
+                              "$userEmail!",
                             ],
                             "플레이리스트": [],
                           },

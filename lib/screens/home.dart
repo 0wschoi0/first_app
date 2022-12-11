@@ -341,7 +341,7 @@ class _MyMainState extends State<MyMain> {
 
     // 홈화면 마지막 요소 슬라이드
     //This is recommended Artist
-    InkWell LastElement() {
+    InkWell LastElement(String artPicUrl, String name, String music) {
       return InkWell(
         onTap: () {
           print("Recommended Artist");
@@ -368,7 +368,7 @@ class _MyMainState extends State<MyMain> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(4),
                     child: Image.network(
-                      "https://lastfm.freetls.fastly.net/i/u/64s/ec71d3329fb762bd59056645a55f0dd3.png",
+                      artPicUrl,
                       height: 60,
                       width: 60,
                     ),
@@ -380,7 +380,7 @@ class _MyMainState extends State<MyMain> {
                 children: [
                   //Artist name
                   Text(
-                    "IU",
+                    name,
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 18,
@@ -390,7 +390,7 @@ class _MyMainState extends State<MyMain> {
                   ),
                   Text(
                     //Music TItle
-                    "삐삐",
+                    music,
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 12,
@@ -635,11 +635,26 @@ class _MyMainState extends State<MyMain> {
                   SizedBox(height: 9.42),
                   Column(
                     children: [
-                      LastElement(),
-                      LastElement(),
-                      LastElement(),
-                      LastElement(),
-                      LastElement(),
+                      LastElement(
+                          "https://lastfm.freetls.fastly.net/i/u/64s/ec71d3329fb762bd59056645a55f0dd3.png",
+                          "IU",
+                          "삐삐"),
+                      LastElement(
+                          "https://lastfm.freetls.fastly.net/i/u/64s/7a51bee8674f56c6cbf7eea968855f46.png",
+                          "NMIXX",
+                          "Dice"),
+                      LastElement(
+                          "https://lastfm.freetls.fastly.net/i/u/64s/d0e042f23c7b689d8958bfdc6c9d48c2.png",
+                          "IU",
+                          "삐삐"),
+                      LastElement(
+                          "https://lastfm.freetls.fastly.net/i/u/64s/d0e042f23c7b689d8958bfdc6c9d48c2.png",
+                          "IU",
+                          "삐삐"),
+                      LastElement(
+                          "https://lastfm.freetls.fastly.net/i/u/64s/d0e042f23c7b689d8958bfdc6c9d48c2.png",
+                          "IU",
+                          "삐삐"),
                     ],
                   )
                 ])
