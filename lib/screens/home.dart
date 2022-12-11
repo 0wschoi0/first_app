@@ -55,7 +55,7 @@ class _MyAppState extends State<HomeScreen> {
             label: '홈',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.document_scanner),
+            icon: Icon(Icons.article_outlined),
             label: '플레이리스트',
           ),
           BottomNavigationBarItem(
@@ -63,7 +63,7 @@ class _MyAppState extends State<HomeScreen> {
             label: '검색',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
+            icon: Icon(Icons.notifications_outlined),
             label: '알림',
           ),
           BottomNavigationBarItem(
@@ -79,9 +79,9 @@ class _MyAppState extends State<HomeScreen> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.purple,
+        selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         onTap: _onItemTapped,
       ),
     ));
@@ -286,7 +286,8 @@ class _MyMainState extends State<MyMain> {
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      CategoryDetailScreen(input: cate, color: color),
+                      CategoryDetailScreen(
+                          cate: cate, input: genre, color: color),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     var begin = Offset(0.0, 1.0);

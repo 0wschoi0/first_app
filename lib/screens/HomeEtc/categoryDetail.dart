@@ -5,12 +5,19 @@ import 'package:lastfm/lastfm.dart';
 import 'package:flutter_config/flutter_config.dart';
 import 'package:xml2json/xml2json.dart';
 import 'dart:convert';
+import 'dart:io';
 
 class CategoryDetailScreen extends StatefulWidget {
-  CategoryDetailScreen({Key? key, required String input, required int color})
-      : _genreInput = input,
+  CategoryDetailScreen(
+      {Key? key,
+      required String cate,
+      required String input,
+      required int color})
+      : _category = cate,
+        _genreInput = input,
         _color = color,
         super(key: key);
+  final String _category;
   final String _genreInput;
   final int _color;
 
@@ -22,6 +29,7 @@ class CategoryDetailScreen extends StatefulWidget {
 class _MyAppState extends State<CategoryDetailScreen> {
   late String input;
   late int color;
+  late String cate;
   LastFM lastfm = LastFMUnauthorized(FlutterConfig.get('LASTFM_API_KEY'),
       FlutterConfig.get('LASTFM_SHARED_SECRET'));
   Xml2Json document = Xml2Json();
@@ -37,6 +45,7 @@ class _MyAppState extends State<CategoryDetailScreen> {
   void initState() {
     input = widget._genreInput;
     color = widget._color;
+    cate = widget._category;
     super.initState();
   }
 
@@ -48,7 +57,7 @@ class _MyAppState extends State<CategoryDetailScreen> {
     jsonData = document.toParker();
     trackInfo = jsonDecode(jsonData);
     trackInfo = trackInfo['lfm']['tracks'];
-    print(jsonData);
+    print(trackInfo);
     numOfDetailList = trackInfo['track'].length;
   }
 
@@ -58,7 +67,7 @@ class _MyAppState extends State<CategoryDetailScreen> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Color(color),
-          title: Text(input),
+          title: Text(cate),
         ),
         body: Container(
           margin: EdgeInsets.all(20),
@@ -66,22 +75,17 @@ class _MyAppState extends State<CategoryDetailScreen> {
             child: Flex(direction: Axis.vertical, children: [
               //여기 밑으로 검색결과들
               ListView.builder(
-                  // itemCount: numOfDetailList, <<<<<<<추가학인필요
-                  itemCount: 3, //임시입력값
+                  itemCount: 5, //numOfDetailList,
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
                     //파싱이 정상적으로 가능한지 확인하지 못 함
                     //추가확인필요
-                    //recMusicName = trackInfo['track'][index]['name'];
-                    //recMusicDur = trackInfo['track'][index]['duration'];
-                    //recMusicCoverURL = trackInfo['track'][index]['image'][1];
-                    //recMusicArtist = trackInfo['track'][index]['artist']['name'];
-                    //이밑에4개는 임시입력값
-                    recMusicName = "Rolling in the deep";
-                    recMusicDur = 234;
+                    recMusicName =
+                        "Rolling in the deep"; // trackInfo['track'][index]['name'];
                     recMusicCoverURL =
-                        "https://lastfm.freetls.fastly.net/i/u/64s/ec71d3329fb762bd59056645a55f0dd3.png";
-                    recMusicArtist = "Adele";
+                        "https://lastfm.freetls.fastly.net/i/u/64s/49849dd64a1524abcd8f3e9c1bf3cb64.png"; // trackInfo['track'][index]['image'][1];
+                    recMusicArtist =
+                        "Adele"; // trackInfo['track'][index]['artist']['name'];
                     return InkWell(
                       onTap: () {
                         print("yourflee");

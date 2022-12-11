@@ -98,7 +98,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           : ElevatedButton(
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(
-                  Color.fromARGB(255, 24, 184, 252),
+                  Color.fromARGB(255, 89, 56, 158),
                 ),
                 shape: MaterialStateProperty.all(
                   RoundedRectangleBorder(
