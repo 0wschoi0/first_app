@@ -43,27 +43,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Container(
         child: Column(children: [
       //Appbar
-      AppBar(
-        title: Row(
-          children: [
-            Image.asset(
-              'assets/google_logo.png',
-              height: 30,
-              width: 30,
-            ),
-            Text(
-              " Profile",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 24,
-                fontFamily: "Pretendard",
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ],
-        ),
-        centerTitle: false,
-        backgroundColor: Colors.white,
+      Container(
+        alignment: Alignment.centerLeft,
+        height: 90,
+        padding: const EdgeInsets.only(left: 30),
+        child: Text("내 프로필",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 30,
+              fontFamily: "Pretendard",
+              fontWeight: FontWeight.w600,
+            )),
       ),
       //UserProfileImage
       Padding(
