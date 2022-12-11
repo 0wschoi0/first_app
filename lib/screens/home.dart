@@ -288,7 +288,8 @@ class _MyMainState extends State<MyMain> {
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      CategoryDetailScreen(input: cate, color: color),
+                      CategoryDetailScreen(
+                          cate: cate, input: genre, color: color),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     var begin = Offset(0.0, 1.0);

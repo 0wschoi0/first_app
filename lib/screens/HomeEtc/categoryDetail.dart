@@ -7,10 +7,16 @@ import 'package:xml2json/xml2json.dart';
 import 'dart:convert';
 
 class CategoryDetailScreen extends StatefulWidget {
-  CategoryDetailScreen({Key? key, required String input, required int color})
-      : _genreInput = input,
+  CategoryDetailScreen(
+      {Key? key,
+      required String cate,
+      required String input,
+      required int color})
+      : _category = cate,
+        _genreInput = input,
         _color = color,
         super(key: key);
+  final String _category;
   final String _genreInput;
   final int _color;
 
@@ -20,6 +26,7 @@ class CategoryDetailScreen extends StatefulWidget {
 
 //Detail info
 class _MyAppState extends State<CategoryDetailScreen> {
+  late String cate;
   late String input;
   late int color;
   LastFM lastfm = LastFMUnauthorized(FlutterConfig.get('LASTFM_API_KEY'),
@@ -35,6 +42,7 @@ class _MyAppState extends State<CategoryDetailScreen> {
 
   @override
   void initState() {
+    cate = widget._category;
     input = widget._genreInput;
     color = widget._color;
     super.initState();
@@ -58,7 +66,7 @@ class _MyAppState extends State<CategoryDetailScreen> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Color(color),
-          title: Text(input),
+          title: Text(cate),
         ),
         body: Container(
           margin: EdgeInsets.all(20),
