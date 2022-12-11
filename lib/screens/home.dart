@@ -26,7 +26,9 @@ class _MyAppState extends State<HomeScreen> {
   //BottomNavigationBar 버튼 메뉴에 따른 dart 페이지 List
   late List<Widget> _widgetOptions = <Widget>[
     MyMain(pageIndex: _pageIndex),
-    PlaylistScreen(),
+    PlaylistScreen(
+      user: _user,
+    ),
     SearchScreen(),
     NotificationScreen(),
     ProfileScreen(user: _user),
@@ -418,14 +420,10 @@ class _MyMainState extends State<MyMain> {
             title: Row(
               children: [
                 Image.asset(
-                  'assets/google_logo.png',
-                  height: 30,
-                  width: 30,
-                ),
-                Text(
-                  " Hear! Here!",
-                  style: TextStyle(color: Colors.black),
-                ),
+                  'assets/app_logo.png',
+                  height: 50,
+                  width: 50,
+                )
               ],
             ),
             centerTitle: false,

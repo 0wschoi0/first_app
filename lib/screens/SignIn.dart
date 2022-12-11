@@ -31,25 +31,11 @@ class _SignInScreenState extends State<SignInScreen> {
                     Flexible(
                       flex: 1,
                       child: Image.asset(
-                        'assets/app_logo.png',
+                        'assets/app_logo_login.png',
                         height: 160,
                       ),
                     ),
                     SizedBox(height: 20),
-                    Text(
-                      'PANGMUE',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 40,
-                      ),
-                    ),
-                    Text(
-                      'Share your Music',
-                      style: TextStyle(
-                        color: Colors.white54,
-                        fontSize: 25,
-                      ),
-                    ),
                   ],
                 ),
               ),

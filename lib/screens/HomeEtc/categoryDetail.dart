@@ -27,6 +27,7 @@ class CategoryDetailScreen extends StatefulWidget {
 
 //Detail info
 class _MyAppState extends State<CategoryDetailScreen> {
+  late String cate;
   late String input;
   late int color;
   late String cate;
@@ -43,6 +44,7 @@ class _MyAppState extends State<CategoryDetailScreen> {
 
   @override
   void initState() {
+    cate = widget._category;
     input = widget._genreInput;
     color = widget._color;
     cate = widget._category;
