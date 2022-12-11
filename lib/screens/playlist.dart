@@ -29,10 +29,9 @@ class _PlaylistScreenState extends State<PlaylistScreen>
   TextEditingController? mailController;
   TextEditingController? msgController;
   late User _user;
-  List resultTxt=List<String>.filled(10, "", growable: true);
-  List songTxt=List<String>.filled(10, "", growable: true);
-  List itmCnt=List<int>.filled(10, 0, growable: true);
-
+  List resultTxt = List<String>.filled(10, "", growable: true);
+  List songTxt = List<String>.filled(10, "", growable: true);
+  List itmCnt = List<int>.filled(10, 0, growable: true);
 
   @override
   void initState() {
@@ -40,8 +39,8 @@ class _PlaylistScreenState extends State<PlaylistScreen>
       length: 2,
       vsync: this, //vsync에 this 형태로 전달해야 애니메이션이 정상 처리됨
     );
-    nameController=TextEditingController();
-    msgController=TextEditingController();
+    nameController = TextEditingController();
+    msgController = TextEditingController();
     _user = widget._user;
     super.initState();
   }
@@ -56,7 +55,7 @@ class _PlaylistScreenState extends State<PlaylistScreen>
         child: Column(children: [
           Container(
               width: 358.70,
-              height: 190,//85.53,
+              height: 190, //85.53,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 boxShadow: [
@@ -76,42 +75,55 @@ class _PlaylistScreenState extends State<PlaylistScreen>
                     return Text("fail");
                   } else {
                     final tempt = snapshot.data!.docs;
-                    final usercol=FirebaseFirestore.instance.collection(_user.email!).doc("privateList");
+                    final usercol = FirebaseFirestore.instance
+                        .collection(_user.email!)
+                        .doc("privateList");
                     usercol.get().then((value) => {
-                      resultTxt[0]=(value["나만의 플레이리스트"]["0"][0].toString()),
-                      resultTxt[1]=(value["나만의 플레이리스트"]["1"][0].toString()),
-                      songTxt[0]=(value["나만의 플레이리스트"]["0"][1].toString()),
-                      songTxt[1]=(value["나만의 플레이리스트"]["1"][1].toString()),
-                      itmCnt[0]=(value["나만의 플레이리스트"]["0"].length-1),
-                      itmCnt[1]=(value["나만의 플레이리스트"]["1"].length-1),
-                      setState(() {})
-                    });
-
+                          resultTxt[0] =
+                              (value["나만의 플레이리스트"]["0"][0].toString()),
+                          resultTxt[1] =
+                              (value["나만의 플레이리스트"]["1"][0].toString()),
+                          songTxt[0] = (value["나만의 플레이리스트"]["0"][1].toString()),
+                          songTxt[1] = (value["나만의 플레이리스트"]["1"][1].toString()),
+                          itmCnt[0] = (value["나만의 플레이리스트"]["0"].length - 1),
+                          itmCnt[1] = (value["나만의 플레이리스트"]["1"].length - 1),
+                          setState(() {})
+                        });
 
                     return ListView.separated(
                         itemCount: 2,
                         separatorBuilder: (BuildContext context, int index) =>
-                        const Divider(thickness: 3),
+                            const Divider(thickness: 3),
                         itemBuilder: (context, index) {
                           return SizedBox(
                               height: 85.53,
-                          child: ListTile(
-                            title: RichText(
-                              text: TextSpan(
-                                style: DefaultTextStyle.of(context).style,
-                                    children: [
+                              child: ListTile(
+                                title: RichText(
+                                    text: TextSpan(
+                                        style:
+                                            DefaultTextStyle.of(context).style,
+                                        children: [
+                                      //큰글씨 : 플레이리스트이름
                                       TextSpan(
                                           text: "${resultTxt[index]!}\n",
-                                          style: TextStyle(fontSize: 30)
-                                      ),
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 18,
+                                            fontFamily: "Pretendard",
+                                            fontWeight: FontWeight.w600,
+                                          )),
+                                      //작은글씨 : 노래들이름
                                       TextSpan(
-                                          text: "\n${songTxt[index]!}외 총 ${itmCnt[index]!}곡\n\n",
-                                          style: TextStyle(fontSize: 15)
-                                      ),
-                                    ])
-                            ),
-                          )
-                          );
+                                          text:
+                                              "\n${songTxt[index]!}외 총 ${itmCnt[index]!}곡\n\n",
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 12,
+                                            fontFamily: "Pretendard",
+                                            fontWeight: FontWeight.w400,
+                                          )),
+                                    ])),
+                              ));
                         });
                   }
                 },
@@ -224,10 +236,10 @@ class _PlaylistScreenState extends State<PlaylistScreen>
                           children: <Widget>[
                             TextFormField(
                               controller: nameController,
-                              validator: (value){
-                                if(value!.isEmpty){
+                              validator: (value) {
+                                if (value!.isEmpty) {
                                   return '입력해주세요';
-                                }else{
+                                } else {
                                   return null;
                                 }
                               },
@@ -238,10 +250,10 @@ class _PlaylistScreenState extends State<PlaylistScreen>
                             ),
                             TextFormField(
                               controller: msgController,
-                              validator: (value){
-                                if(value!.isEmpty){
+                              validator: (value) {
+                                if (value!.isEmpty) {
                                   return '입력해주세요';
-                                }else{
+                                } else {
                                   return null;
                                 }
                               },
@@ -259,14 +271,22 @@ class _PlaylistScreenState extends State<PlaylistScreen>
                           child: Text("Submit"),
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
-                              final usercol=FirebaseFirestore.instance.collection(_user.email!).doc("privateList");
-                              int i=0;
+                              final usercol = FirebaseFirestore.instance
+                                  .collection(_user.email!)
+                                  .doc("privateList");
+                              int i = 0;
                               print("sdfsdaf");
                               usercol.get().then((value) => {
-                                usercol.update({
-                                "나만의 플레이리스트.${value["나만의 플레이리스트"].length}" : [nameController!.value.text,"tomboy","hypeboy","새삥"]
-                                })
-                              });
+                                    usercol.update({
+                                      "나만의 플레이리스트.${value["나만의 플레이리스트"].length}":
+                                          [
+                                        nameController!.value.text,
+                                        "tomboy",
+                                        "hypeboy",
+                                        "새삥"
+                                      ]
+                                    })
+                                  });
                             }
                             Navigator.pop(context);
                             // your code
