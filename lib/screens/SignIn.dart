@@ -11,7 +11,7 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color.fromARGB(255, 89, 56, 158),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(
@@ -31,7 +31,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     Flexible(
                       flex: 1,
                       child: Image.asset(
-                        'assets/app_logo_login.png',
+                        'assets/app_logo_login_white.png',
                         height: 160,
                       ),
                     ),
