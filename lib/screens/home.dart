@@ -348,19 +348,60 @@ class _MyMainState extends State<MyMain> {
         },
         child: Column(children: [
           Container(
-              width: 358.70,
-              height: 85.53,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x26262626),
-                    blurRadius: 10,
-                    offset: Offset(0, 2),
+            width: 358.70,
+            height: 85.53,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              boxShadow: [
+                BoxShadow(
+                  color: Color(0x26262626),
+                  blurRadius: 10,
+                  offset: Offset(0, 2),
+                ),
+              ],
+              color: Colors.white,
+            ),
+            child: Row(children: [
+              //Album Cover Img
+              Padding(
+                  padding: EdgeInsets.only(left: 12.5, right: 10),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(4),
+                    child: Image.network(
+                      "https://lastfm.freetls.fastly.net/i/u/64s/ec71d3329fb762bd59056645a55f0dd3.png",
+                      height: 60,
+                      width: 60,
+                    ),
+                  )),
+              //Music title&Artist name
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  //Artist name
+                  Text(
+                    "IU",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontFamily: "Pretendard",
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Text(
+                    //Music TItle
+                    "삐삐",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 12,
+                      fontFamily: "Pretendard",
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ],
-                color: Colors.white,
-              )),
+              )
+            ]),
+          ),
           SizedBox(
             height: 9.42,
           )
