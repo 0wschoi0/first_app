@@ -4,27 +4,29 @@
 
 > 공유 플레이리스트
 
-<br>
+## 📲 실행 방법
 
- ## 💡 Motivation of this project
- 여기에 내용 입력
- 
-<br>
+Flutter를 먼저 설치해야 합니다. [설치하기](https://docs.flutter.dev/get-started/install)
 
-## 📑 Features of this project
- ### ⚙ It Provides:
-* 사용자가 플레이리스트를 
-* 
-* 
-*
+### 1. Git Clone
+```shell
+git clone https://github.com/0wschoi0/first_app.git
+```
 
-<br>
+### 2. Flutter 의존성 설치
+```shell
+flutter pub get
+flutter pub upgrade
+```
 
-## 📲 How to Setup?
-
-<br>
-
+### 3. 실행
+```shell
+# debug mode
 flutter run
+
+# release mode
+flutter run --release
+```
 <br>
 
 
@@ -44,7 +46,11 @@ flutter run
  <div align="center">
 
 
-### 앱개발
+### 앱개발이론과실습
+
+ |<img src="https://avatars.githubusercontent.com/u/83345831?v=4" width="80">|<img src="https://avatars.githubusercontent.com/u/118962282?v=4" width="80">|<img src="https://avatars.githubusercontent.com/u/90975368?v=4" width="80">|<img src="https://avatars.githubusercontent.com/u/84065385?v=4" width="80">|<img src="https://avatars.githubusercontent.com/u/112372174?v=4" width="80">|
+|:---:|:---:|:---:|:---:|:---:|
+|[Woosuk Choi](https://github.com/0wschoi0)|[kimki75](https://github.com/kimki75)|[Chloe0929](https://github.com/Chloe0929)|[juno801](https://github.com/juno801)|[yunasin](https://github.com/star1502)|
  
  <br>
 
