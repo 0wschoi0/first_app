@@ -19,7 +19,16 @@ flutter pub get
 flutter pub upgrade
 ```
 
-### 3. 실행
+### 3. LastFM API Key 추가
+해당 프로젝트 root 디렉토리에 .env 파일을 생성한 다음 LastFM API키를 추가해야합니다.
+LastFM API키는 홈페이지에 들어가서 회원가입 후 가져오면 됩니다.
+
+```shell
+LASTFM_API_KEY=
+LASTFM_SHARED_SECRET=
+```
+
+### 4. 실행
 ```shell
 # debug mode
 flutter run
